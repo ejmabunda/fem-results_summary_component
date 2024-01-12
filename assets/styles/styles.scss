@@ -1,15 +1,34 @@
-$mobile-width: 375px;
+$mobile-width: 430px;
+$mobile-height: 932px;
 $desktop-width: 1440px;
+
+$padding: 2rem;
+$padding-small: 1rem;
+$margin: 1rem;
+$margin-large: 2rem;
+
+$opacity: 0.05;
 
 /* colors */
 $light-red: hsl(0, 100%, 67%);
 $orangey-yellow: hsl(39, 100%, 56%);
-$reen-teal: hsl(166, 100%, 37%);
-$obalt-blue: hsl(234, 85%, 45%);
+$green-teal: hsl(166, 100%, 37%);
+$cobalt-blue: hsl(234, 85%, 45%);
+
+$accent-color: #333333;
+$accent-light: #aaaaaa;
+
+/* 
+  replace with variables that take arguments
+*/
+$xlight-red: hsla(0, 100%, 67%, $opacity);
+$xorangey-yellow: hsla(39, 100%, 56%, $opacity);
+$xgreen-teal: hsla(166, 100%, 37%, $opacity);
+$xcobalt-blue: hsla(234, 85%, 45%, $opacity);
 
 /* gradients */
 $light-slate-blue: hsl(252, 100%, 67%); /* background */
-$-light-royal-blue: hsl(241, 81%, 54%); /* background */
+$light-royal-blue: hsl(241, 81%, 54%); /* background */
 
 $violet-blue: hsla(256, 72%, 46%, 1); /* circle */
 $persian-blue: hsla(241, 72%, 46%, 0); /* circle */
@@ -17,6 +36,7 @@ $persian-blue: hsla(241, 72%, 46%, 0); /* circle */
 /* font */
 $body-text: 18px;
 $font: "Hanken Grotesk", sans-serif;
+$color-light: hsl(252, 100%, 85%); /* background */
 
 /* reset default styles */
 * {
@@ -27,4 +47,134 @@ $font: "Hanken Grotesk", sans-serif;
 body {
   font-family: $font;
   font-size: $body-text;
+  background-color: white;
+}
+
+.container {
+  max-width: $mobile-width;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: $light-slate-blue;
+    color: $color-light;
+    padding: $padding;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+    * {
+      margin-bottom: $margin;
+    }
+
+    .user-score,
+    .comment-title {
+      color: white;
+      font-weight: 600;
+    }
+
+    .score {
+      border-radius: 50%;
+      background-color: green;
+      width: calc((1 / 3) * #{$mobile-width});
+      height: calc((1 / 3) * #{$mobile-width});
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .average {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        * {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .summary {
+    padding: $padding;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      margin-bottom: $margin-large;
+      color: $accent-color;
+    }
+
+    .categories {
+      .category {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $padding-small;
+        border-radius: 0.5rem;
+        margin-bottom: $margin;
+
+        .title {
+          display: flex;
+
+          img {
+            margin-right: $margin;
+          }
+        }
+
+        .category-score {
+          font-weight: 600;
+          color: $accent-color;
+
+          .category-score-total {
+            color: $accent-light;
+          }
+        }
+      }
+      .category:nth-child(1) {
+        background-color: $xlight-red;
+
+        .title {
+          color: $light-red;
+        }
+      }
+      .category:nth-child(2) {
+        background-color: $xorangey-yellow;
+
+        .title {
+          color: $orangey-yellow;
+        }
+      }
+      .category:nth-child(3) {
+        background-color: $xgreen-teal;
+
+        .title {
+          color: $green-teal;
+        }
+      }
+      .category:nth-child(4) {
+        background-color: $xcobalt-blue;
+
+        .title {
+          color: $cobalt-blue;
+        }
+      }
+    }
+
+    a {
+      display: block;
+      background-color: $accent-color;
+      color: white;
+      padding: $padding-small;
+      border-radius: 3rem;
+      text-align: center;
+      text-decoration: none;
+    }
+  }
 }

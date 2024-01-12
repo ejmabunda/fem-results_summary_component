@@ -1,10 +1,14 @@
 /* colors */
+/* 
+  replace with variables that take arguments
+*/
 /* gradients */
 /* background */
 /* background */
 /* circle */
 /* circle */
 /* font */
+/* background */
 /* reset default styles */
 * {
   margin: 0;
@@ -12,6 +16,93 @@
 
 body {
   font-family: "Hanken Grotesk", sans-serif;
-  font-size: 18px; }
+  font-size: 18px;
+  background-color: white; }
+
+.container {
+  max-width: 430px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; }
+  .container .result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #7857ff;
+    color: #c2b3ff;
+    padding: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem; }
+    .container .result * {
+      margin-bottom: 1rem; }
+    .container .result .user-score,
+    .container .result .comment-title {
+      color: white;
+      font-weight: 600; }
+    .container .result .score {
+      border-radius: 50%;
+      background-color: green;
+      width: calc((1 / 3) * 430px);
+      height: calc((1 / 3) * 430px);
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .container .result .score .average {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .container .result .score .average * {
+          margin: 0; }
+  .container .summary {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .container .summary h2 {
+      margin-bottom: 2rem;
+      color: #333333; }
+    .container .summary .categories .category {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem; }
+      .container .summary .categories .category .title {
+        display: flex; }
+        .container .summary .categories .category .title img {
+          margin-right: 1rem; }
+      .container .summary .categories .category .category-score {
+        font-weight: 600;
+        color: #333333; }
+        .container .summary .categories .category .category-score .category-score-total {
+          color: #aaaaaa; }
+    .container .summary .categories .category:nth-child(1) {
+      background-color: rgba(255, 87, 87, 0.05); }
+      .container .summary .categories .category:nth-child(1) .title {
+        color: #ff5757; }
+    .container .summary .categories .category:nth-child(2) {
+      background-color: rgba(255, 176, 31, 0.05); }
+      .container .summary .categories .category:nth-child(2) .title {
+        color: #ffb01f; }
+    .container .summary .categories .category:nth-child(3) {
+      background-color: rgba(0, 189, 145, 0.05); }
+      .container .summary .categories .category:nth-child(3) .title {
+        color: #00bd91; }
+    .container .summary .categories .category:nth-child(4) {
+      background-color: rgba(17, 37, 212, 0.05); }
+      .container .summary .categories .category:nth-child(4) .title {
+        color: #1125d4; }
+    .container .summary a {
+      display: block;
+      background-color: #333333;
+      color: white;
+      padding: 1rem;
+      border-radius: 3rem;
+      text-align: center;
+      text-decoration: none; }
 
 /*# sourceMappingURL=styles.css.map */
