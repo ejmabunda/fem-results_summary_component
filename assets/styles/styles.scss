@@ -1,9 +1,8 @@
 $mobile-width: 430px;
-$mobile-height: 932px;
 $desktop-width: 1440px;
 
-$padding: 2rem;
-$padding-small: 1rem;
+$padding: 1.8rem;
+$padding-small: 0.8rem;
 $margin: 1rem;
 $margin-large: 2rem;
 
@@ -34,6 +33,9 @@ $violet-blue: hsla(256, 72%, 46%, 1); /* circle */
 $persian-blue: hsla(241, 72%, 46%, 0); /* circle */
 
 /* font */
+@mixin font-size($mult: 1) {
+  font-size: calc(#{$body-text * $mult});
+}
 $body-text: 18px;
 $font: "Hanken Grotesk", sans-serif;
 $color-light: hsl(252, 100%, 85%); /* background */
@@ -42,6 +44,11 @@ $color-light: hsl(252, 100%, 85%); /* background */
 * {
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: "Hanken Grotesk";
+  src: url(/assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
 }
 
 body {
@@ -61,7 +68,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: $light-slate-blue;
+    background-image: linear-gradient($light-slate-blue, $light-royal-blue);
     color: $color-light;
     padding: $padding;
     border-bottom-left-radius: 2rem;
@@ -71,17 +78,30 @@ body {
       margin-bottom: $margin;
     }
 
+    h1 {
+      font-size: 1rem;
+    }
+
     .user-score,
     .comment-title {
       color: white;
       font-weight: 600;
     }
 
+    .comment-title {
+      font-size: 1.3rem;
+    }
+    .comment {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    // Circle
     .score {
       border-radius: 50%;
-      background-color: green;
-      width: calc((1 / 3) * #{$mobile-width});
-      height: calc((1 / 3) * #{$mobile-width});
+      background-image: linear-gradient($violet-blue, $persian-blue);
+      width: calc((1 / 6) * 100vh);
+      height: calc((1 / 6) * 100vh);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -95,6 +115,10 @@ body {
         * {
           margin: 0;
         }
+
+        .user-score {
+          font-size: 3rem;
+        }
       }
     }
   }
@@ -107,8 +131,9 @@ body {
     justify-content: space-between;
 
     h2 {
-      margin-bottom: $margin-large;
+      margin-bottom: 1.2rem;
       color: $accent-color;
+      font-size: 1.1rem;
     }
 
     .categories {
@@ -122,15 +147,16 @@ body {
 
         .title {
           display: flex;
-
+          font-size: 0.9rem;
           img {
             margin-right: $margin;
           }
         }
 
         .category-score {
-          font-weight: 600;
+          font-weight: 700;
           color: $accent-color;
+          font-size: 0.9rem;
 
           .category-score-total {
             color: $accent-light;
