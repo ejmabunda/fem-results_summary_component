@@ -130,7 +130,7 @@ body {
 
   .container {
     max-width: unset;
-    width: 500px;
+    width: 550px;
     height: unset;
     flex-direction: row;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -139,7 +139,7 @@ body {
       height: inherit;
       border-top-right-radius: 2rem;
       border-top-left-radius: 2rem;
-      width: calc(250px);
+      width: calc(275px);
       display: flex;
       flex-direction: column;
       justify-content: space-between; }
@@ -150,7 +150,7 @@ body {
         font-size: 0.8rem; }
     .container .summary {
       height: inherit;
-      width: calc(250px);
+      width: calc(275px);
       flex: unset; }
       .container .summary * {
         font-size: 0.8rem; }
