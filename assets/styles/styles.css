@@ -7,7 +7,6 @@
 /* background */
 /* circle */
 /* circle */
-/* font */
 /* background */
 /* reset default styles */
 * {
@@ -113,11 +112,58 @@ body {
         color: #1125d4; }
     .container .summary a {
       display: block;
-      background-color: #333333;
+      background-color: #303b5a;
       color: white;
       padding: 0.8rem;
       border-radius: 3rem;
       text-align: center;
       text-decoration: none; }
+    .container .summary a:hover {
+      background-image: linear-gradient(#7857ff, #2e2be9); }
+
+@media (min-width: 430px) {
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+  .container {
+    max-width: unset;
+    width: 500px;
+    height: unset;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 2rem; }
+    .container .result {
+      height: inherit;
+      border-top-right-radius: 2rem;
+      border-top-left-radius: 2rem;
+      width: calc(250px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .container .result .score {
+        width: calc((1 / 5) * 100vh);
+        height: calc((1 / 5) * 100vh); }
+      .container .result .comment {
+        font-size: 0.8rem; }
+    .container .summary {
+      height: inherit;
+      width: calc(250px);
+      flex: unset; }
+      .container .summary * {
+        font-size: 0.8rem; }
+
+  .attribution {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    padding: 2rem;
+    position: absolute;
+    bottom: 0; }
+    .attribution a {
+      color: #1125d4;
+      text-decoration: underline; } }
 
 /*# sourceMappingURL=styles.css.map */

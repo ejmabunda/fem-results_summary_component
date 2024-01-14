@@ -32,10 +32,8 @@ $light-royal-blue: hsl(241, 81%, 54%); /* background */
 $violet-blue: hsla(256, 72%, 46%, 1); /* circle */
 $persian-blue: hsla(241, 72%, 46%, 0); /* circle */
 
-/* font */
-@mixin font-size($mult: 1) {
-  font-size: calc(#{$body-text * $mult});
-}
+$link-color: hsl(224, 30%, 27%);
+
 $body-text: 18px;
 $font: "Hanken Grotesk", sans-serif;
 $color-light: hsl(252, 100%, 85%); /* background */
@@ -195,12 +193,76 @@ body {
 
     a {
       display: block;
-      background-color: $accent-color;
+      background-color: $link-color;
       color: white;
       padding: $padding-small;
       border-radius: 3rem;
       text-align: center;
       text-decoration: none;
+    }
+    a:hover {
+      background-image: linear-gradient($light-slate-blue, $light-royal-blue);
+    }
+  }
+}
+
+@media (min-width: $mobile-width) {
+  $width: 500px;
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    max-width: unset;
+    width: $width;
+    height: unset;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    border-radius: 2rem;
+
+    .result {
+      height: inherit;
+      border-top-right-radius: 2rem;
+      border-top-left-radius: 2rem;
+      width: calc(#{$width / 2});
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .score {
+        width: calc((1 / 5) * 100vh);
+        height: calc((1 / 5) * 100vh);
+      }
+
+      .comment {
+        font-size: 0.8rem;
+      }
+    }
+    .summary {
+      height: inherit;
+      width: calc(#{$width / 2});
+      flex: unset;
+
+      * {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .attribution {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    padding: 2rem;
+    position: absolute;
+    bottom: 0;
+
+    a {
+      color: $cobalt-blue;
+      text-decoration: underline;
     }
   }
 }
