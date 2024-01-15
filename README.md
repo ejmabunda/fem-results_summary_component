@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Responsive Component for Results Summary](https://your-solution-url.com)
+- Solution URL: [Responsive Component for Results Summary](https://www.frontendmentor.io/solutions/responsive-results-summary-component-CTqJxm35t9)
 - Live Site URL: [Results Summary Component](https://ejmabunda.github.io/fem-results_summary_component/)
 
 ## My process
