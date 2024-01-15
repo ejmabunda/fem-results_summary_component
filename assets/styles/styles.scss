@@ -206,7 +206,32 @@ body {
   }
 }
 
+.attribution {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  padding: 2rem;
+
+  a {
+    color: $accent-color;
+    text-decoration: underline;
+  }
+}
+
 @media (min-width: $mobile-width) {
+  .attribution {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    padding: 2rem;
+    position: absolute;
+    bottom: 0;
+
+    a {
+      color: $accent-color;
+      text-decoration: underline;
+    }
+  }
   $width: 550px;
   body {
     height: 100vh;
@@ -249,20 +274,6 @@ body {
       * {
         font-size: 0.8rem;
       }
-    }
-  }
-
-  .attribution {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0;
-
-    a {
-      color: $cobalt-blue;
-      text-decoration: underline;
     }
   }
 }

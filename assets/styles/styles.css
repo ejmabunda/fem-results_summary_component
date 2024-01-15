@@ -121,7 +121,27 @@ body {
     .container .summary a:hover {
       background-image: linear-gradient(#7857ff, #2e2be9); }
 
+.attribution {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  padding: 2rem; }
+  .attribution a {
+    color: #333333;
+    text-decoration: underline; }
+
 @media (min-width: 430px) {
+  .attribution {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    padding: 2rem;
+    position: absolute;
+    bottom: 0; }
+    .attribution a {
+      color: #333333;
+      text-decoration: underline; }
+
   body {
     height: 100vh;
     display: flex;
@@ -153,17 +173,6 @@ body {
       width: calc(275px);
       flex: unset; }
       .container .summary * {
-        font-size: 0.8rem; }
-
-  .attribution {
-    text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    padding: 2rem;
-    position: absolute;
-    bottom: 0; }
-    .attribution a {
-      color: #1125d4;
-      text-decoration: underline; } }
+        font-size: 0.8rem; } }
 
 /*# sourceMappingURL=styles.css.map */
